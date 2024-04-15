@@ -12,7 +12,7 @@ export class CommonPageElements{
                 return cy.get('#nameofuser')
             },
             get home(){
-                return cy.get('li.active a')
+                return cy.contains('a','Home')
             },
             get cart(){
                 return cy.get('a#cartur')

@@ -1,9 +1,18 @@
 export class HomeElements{
-    static get elements(){
+    static get categoriesMenu(){
         return{
-            productLink(productName){
-                return cy.contains('a',productName)
+            get phones(){
+                return cy.contains('a', 'Phones')
+            },
+            get laptops(){
+                return cy.contains('a', 'Laptops')
+            },
+            get monitors(){
+                return cy.contains('a', 'Monitors')
             }
         }
+    }
+    static product(productName){
+        return cy.contains('a',productName)
     }
 }

@@ -23,6 +23,9 @@ export class PlaceOrderElements{
     }
     static get buttons(){
         return{
+            get close(){
+                return cy.get('div[id="orderModal"] button').eq(1)
+            },
             get purchase(){
                 return cy.contains('button', 'Purchase')
             }

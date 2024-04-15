@@ -1,12 +1,13 @@
-import { CommonPageConstants, CommonPageData } from "./common-page.data";
+import { CommonPageData } from "./common-page.data";
 import { CommonPageElements } from "./common-page.elements";
 
 export class CommonPageMethods{
     static generateRandomString(){
-        return ("user" + Math.random().toString(36).slice(2));
+        return ("string" + Math.random().toString(36).slice(2));
     }
 
     static navigateToTheApplication(){
+        cy.clearCookies()
         cy.visit(CommonPageData.applicationUrl)
     }
 
@@ -28,5 +29,10 @@ export class CommonPageMethods{
 
     static clickOnCartOption(){
         CommonPageElements.topMenu.cart.click()
+    }
+    static verifyAlert(expectedMessage){
+        cy.on('window:alert',(str)=>{
+            expect(str).to.equal(expectedMessage)
+        })
     }
 }

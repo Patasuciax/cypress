@@ -1,7 +1,7 @@
 export class PlaceOrderData{
     static get testData(){
         return{
-            name:'POM test',
+            name:'testname',
             country:'Argentina',
             city:'Cordoba',
             creditCard:'928384750283749',

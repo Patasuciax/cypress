@@ -2,6 +2,9 @@ import { PurchaseElements } from "./purchase.elements";
 
 export class PurchaseMethods{
     static verifyPurchaseSuccesful(){
-        PurchaseElements.elements.purchaseSuccessCheckMark.should('exist')
+        PurchaseElements.icons.purchaseSuccessCheckMark.should('exist')
+    }
+    static clickOnOk(){
+        PurchaseElements.buttons.clickOnOk()
     }
 }

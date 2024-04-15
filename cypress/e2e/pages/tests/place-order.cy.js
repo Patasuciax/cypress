@@ -5,7 +5,7 @@ import { HomeMethods } from "../home/home.methods"
 import { LoginMethods } from "../login/login.methods"
 import { PlaceOrderData } from "../place-order/place-order.data"
 import { PlaceOrderMethods } from "../place-order/place-order.methods"
-import { ProductMethods } from "../product/product.methods"
+import { ProductDetailsMethods, ProductMethods } from "../product-details/product-details.methods"
 import { PurchaseMethods } from "../purchase/purchase.methods"
 import { SignUpMethods } from "../sign-up/sign-up.methods"
 
@@ -13,7 +13,7 @@ describe('Place order',()=>{
     it("Place order with newly created user account",()=>{
         const username = CommonPageMethods.generateRandomString()
         const password = CommonPageMethods.generateRandomString()
-        const productName = HomeData.testData.productName
+        const productName = HomeData.phones.nexus6
         const orderTestData = PlaceOrderData.testData
 
         CommonPageMethods.navigateToTheApplication()
@@ -21,8 +21,8 @@ describe('Place order',()=>{
         LoginMethods.login(username,password)
 
         CommonPageMethods.clickOnHomePage()
-        HomeMethods.clickOnProductName(productName)
-        ProductMethods.clickOnAddToProductButton()
+        HomeMethods.clickOnProductLink(productName)
+        ProductDetailsMethods.clickOnAddToCartButton()
 
         CommonPageMethods.clickOnCartOption()
         CartMethods.clickOnPlaceOrderButton()
